@@ -1,4 +1,6 @@
-# book-reader
+# ti-book-reader
+
+Part of Text Insights (TI) project.
 
 This service reads the classic book text file, extracts words and sentences, and sends each word to the analysis service via gRPC.
 
