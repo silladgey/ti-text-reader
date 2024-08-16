@@ -1,3 +1,6 @@
 DATA_DIR_PATH = "data"
 BOOK_FILE_NAME = "pg73956.txt"
 BOOK_PATH = f"{DATA_DIR_PATH}/{BOOK_FILE_NAME}"
+
+PORT = 50051
+BASE_URL = f"localhost:{PORT}"
