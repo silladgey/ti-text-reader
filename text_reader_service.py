@@ -17,10 +17,10 @@ class TextReaderService(text_reader_pb2_grpc.TextReaderServicer):
         """Initializes the TextReaderService with the path to the file to read."""
         self.file_path = file_path
         self.words = []
-        self._load_words()
+        self.load_words()
 
-    def _load_words(self):
-        """Loads the words from the file and returns them as a list."""
+    def load_words(self):
+        """Loads the words from the file into memory."""
         with open(self.file_path, "r", encoding="utf-8") as file:
             text = file.read()
         self.words = text.split()
@@ -31,7 +31,7 @@ class TextReaderService(text_reader_pb2_grpc.TextReaderServicer):
         """Returns the next word from the file."""
         if self.current_index >= len(self.words):
             logging.info("Reached end of file")
-            self._load_words()
+            self.load_words()
             return text_reader_pb2.WordResponse(word=None, eof=True)
 
         word = self.words[self.current_index]
