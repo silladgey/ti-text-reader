@@ -4,6 +4,7 @@ import text_reader_pb2_grpc
 
 
 def run():
+    """Runs the client to communicate with the TextReader service."""
     with grpc.insecure_channel("localhost:50051") as channel:
         stub = text_reader_pb2_grpc.TextReaderStub(channel)
         while True:
