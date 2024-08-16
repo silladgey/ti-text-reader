@@ -2,7 +2,7 @@
 
 # Add files or directories matching the regex patterns to the blacklist. The
 # regex matches against base names, not paths.
-ignore-patterns=text_reader_pb2.py,text_reader_pb2_grpc.py
+ignore-patterns=.*_pb2(_grpc)?\.py$
 
 [MESSAGES CONTROL]
 
@@ -27,4 +27,5 @@ disable=C0103,C0114,C0301
 # List of members which are set dynamically and missed by pylint inference
 # system, and so shouldn't trigger E1101 when accessed. Python regular
 # expressions are accepted.
-generated-members=text_reader_pb2.*,text_reader_pb2_grpc.*
+generated-members=^.*_pb2(\.|\_grpc).*$
+
