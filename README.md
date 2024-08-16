@@ -1,4 +1,4 @@
-# ti-book-reader
+# ti-text-reader
 
 Part of Text Insights (TI) project.
 
